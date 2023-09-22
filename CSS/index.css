@@ -28,11 +28,15 @@
     animation: desvanecer 5s;
     height: 400px !important;
     width: 100%;
+   
 }
 .img-desvanecer{
     animation: desvanecer 5s;
     height: 400px !important;
     width: 50%;
+    @media (max-width:991px){
+        width: 100%;
+    }
 }
 
 @keyframes desvanecer{
