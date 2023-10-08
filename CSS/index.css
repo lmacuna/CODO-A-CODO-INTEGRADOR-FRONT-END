@@ -60,4 +60,5 @@
 .footer{
     background-image: linear-gradient(to right, #1c3643, #1e5372);
     top: auto !important;
+    margin-top: auto !important;
 }
