@@ -84,8 +84,8 @@ form.addEventListener('submit',(e)=>{
 
 
 const reset=()=>{
-    document.querySelector("#subTotal").innerText ='$0',
-    document.querySelector("#total").innerText = '$0'
+    document.querySelector("#subTotal").innerText ='0',
+    document.querySelector("#total").innerText = '0'
     document.querySelector("#tickets").innerText='0'
     document.querySelector('[name=diez]').classList.add("tarjeta-naranja")
     document.querySelector('[name=cincuenta]').classList.remove("tarjeta-naranja")
