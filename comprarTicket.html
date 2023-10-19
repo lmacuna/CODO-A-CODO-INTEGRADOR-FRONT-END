@@ -8,6 +8,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
         <link rel="stylesheet" href="CSS/index.css">
+        <link rel="stylesheet" href="CSS/comprarTicket.css">
 </head>
 
 <body class="w-100 h-100">
@@ -51,9 +52,13 @@
         </div>
     </nav>
     <main class="container p-0 h-100 w-100" style="height: 100%;">
-
+        <div class="tarjetas">
+            <div class="tarjeta" name="diez" onclick="desc(id)" id="10">Codo a Codo <br>Junior <br>10%</div>
+            <div class="tarjeta" name="treinta" onclick="desc(id)" id="30">Codo a Codo <br>Ssr <br>30%</div>
+            <div class="tarjeta" name="cincuenta" onclick="desc(id)" id="50">Codo a Codo <br>Sr <br>50%</div>
+        </div>
         <div class="container w-100 h-100 p-0">
-            <form id="form-ticket" class="container w-100 pt-5" style="height: 73.3vh;">
+            <form id="form" class="container w-100 pt-5" style="height: 73.3vh;">
                 <div class="container w-100">
                     <div class="col-md w-100">
                         <div class="row">
@@ -65,27 +70,32 @@
                                 <input class="mb-3 p-2 form-control w-100" required type="text" name="apellido"
                                     placeholder="Apellido">
                             </div>
+                            <div class="col-md">
+                                <input class="mb-3 p-2 form-control w-100" required type="text" name="email"
+                                    placeholder="E-Mail">
+                            </div>
                         </div>
                     </div>
                     <div class="col-md w-100">
                         <div class="row mb-3">
                             <div class="col-md w-100">
                                 <input class="mb-0  p-2 form-control w-100" min="0" onchange="calcular()"
-                                    onkeyup="calcular()" required type="number" name="ticket" id="cantidad"
+                                    onkeyup="calcular()" required type="number" name="ticket" id="cant"
                                     placeholder="Cantidad de Tickets">
                                 <div class="w-100 p-1 mb-3">Valor Ticket: $1000 <br>subTotal s/desc: $<span id="subTotal">0</span></div>
                             </div>
                             <div class="col-md w-100">
                                 <select class="mb-3  p-2 form-control text-secondary w-100 form-select"
-                                    onchange="calcular()" name="desc" id="descuento">
-                                    <option value="50">Estudiante 50%</option>
+                                    onchange="calcular()" name="desc" id="desc">
+                                    <option value="10">Estudiante 10%</option>
                                     <option value="30">Profesional 30%</option>
-                                    <option value="10">Orador 10%</option>
+                                    <option value="50">Orador 50%</option>
                                 </select>
                             </div>
                         </div>
                     </div>
                     <div class="col-md w-100">
+                        <div style="display: flex; width: 42em;"><b>Tickets:</b> <div id="tickets">0</div></div>
                         <div class="w-100 h-25 bg-warning p-2 mt-3 rounded">Total a Pagar: $<span id="total">0</span></div>
                         <div><input class="btn btn-secondary p-2 w-100 mt-2 text-light" type="submit" value="Comprar">
                         </div>
@@ -113,7 +123,7 @@
         </ul>
     
     </footer>
-
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/11.6.1/sweetalert2.all.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
         integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3"
         crossorigin="anonymous"></script>
